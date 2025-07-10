@@ -93,7 +93,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  color: #6E42F4;
   font-family: var(--heading-font);
 }
 
@@ -102,7 +102,7 @@ h6 {
 .php-email-form .error-message {
   display: none;
   background: #df1529;
-  color: #ffffff;
+  color: #fffafa;
   text-align: left;
   padding: 15px;
   margin-bottom: 24px;
@@ -111,7 +111,7 @@ h6 {
 
 .php-email-form .sent-message {
   display: none;
-  color: #ffffff;
+  color: #fffafa;
   background: #059652;
   text-align: center;
   padding: 15px;
@@ -154,8 +154,8 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   --background-color: rgba(0, 0, 0, 0);
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
+  --default-color: #fffafa;
+  --heading-color: #fffafa;
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 20px 0;
@@ -462,7 +462,7 @@ h6 {
   }
 
   .mobile-nav-active .mobile-nav-toggle {
-    color: #fff;
+    color: #fffafa;
     position: absolute;
     font-size: 32px;
     top: 15px;
@@ -622,7 +622,7 @@ h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #ffffff;
+  border: 6px solid #fffafa;
   border-color: var(--accent-color) transparent var(--accent-color) transparent;
   border-radius: 50%;
   width: 60px;
@@ -866,6 +866,15 @@ section,
   .hero .btn-watch-video {
     font-size: 13px;
   }
+
+  .hero img {
+    width: 100vw;
+    max-width: 640px;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+    float: none;
+  }
+
 }
 
 @keyframes up-down {
@@ -882,8 +891,8 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about .content h3 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 400;
 }
 
 .about .content ul {
@@ -1231,7 +1240,7 @@ section,
 }
 
 .portfolio .portfolio-content .portfolio-info p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var(--default-color));
   font-size: 14px;
   margin-bottom: 0;
   padding-right: 50px;
