@@ -31,7 +31,7 @@
 :root {
   --nav-color: #6E42F4;  /* The default color of the main navmenu links */
   --nav-hover-color: #6E42F4; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #7DA3DF; /* Used as the background color for mobile navigation menu */
+  --nav-mobile-background-color: #97B9ED; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #FFFAFA; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #192C48; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #6E42F4; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
@@ -53,7 +53,7 @@
 }
 
 .accent-background {
-  --background-color: #7DA3DF;
+  --background-color: #97B9ED;
   --default-color: #6E42F4;
   --heading-color: #FFFAFA;
   --accent-color: #FFFAFA;
@@ -71,15 +71,19 @@
 --------------------------------------------------------------*/
 body {
   color: var(--default-color);
-  background:url("/assets/img/Fondo\ blurreado.png");
+  background:#FFFAFA;
   background-size: 100%;
   font-family: var(--default-font);
 }
 
 a {
-  color: var(--accent-color);
+  color: #6E42F4;
   text-decoration: none;
   transition: 0.3s;
+}
+
+.bi-chevron-compact-down {
+  font-size: 40px;
 }
 
 a:hover {
@@ -219,7 +223,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: #7DA3DF;
+  --background-color: #97B9ED;
 }
 
 /*--------------------------------------------------------------
@@ -503,7 +507,7 @@ h6 {
 
 .footer .footer-about .logo {
   line-height: 1;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .footer .footer-about .logo img {
@@ -520,8 +524,10 @@ h6 {
 }
 
 .footer .footer-about p {
-  font-size: 14px;
-  font-family: var(--heading-font);
+  color: #FFFAFA;
+  font-size: 16px;
+  font-family: var(--default-font);
+  font-weight: 700;
 }
 
 .footer .social-links a {
@@ -531,9 +537,9 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 0%);
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
   margin-right: 10px;
   transition: 0.3s;
 }
@@ -785,7 +791,7 @@ section,
   padding: 120px 0 60px 0;
   display: flex;
   align-items: center;
-  background: linear-gradient(45deg, var(--background-color) 0%, color-mix(in srgb, var(--surface-color), transparent 10%) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+  background: url("../img/hero-bg.jpg") center center no-repeat;
   background-size: cover;
 }
 
@@ -902,6 +908,7 @@ section,
 
 .about .content ul li {
   padding-bottom: 10px;
+  white-space: pre-wrap;
 }
 
 .about .content ul i {
@@ -948,16 +955,11 @@ section,
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
-.banner {
-  position: relative;
-  padding: 80px 0;
-  background-size: cover;
-  background:url(/assets/img/banner.png)
-}
-
 .stats {
   position: relative;
-  padding: 80px 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: url("../img/stats-bg.png") center center no-repeat;
   background-size: cover;
 }
 
@@ -1052,8 +1054,19 @@ section,
 # Features Section
 --------------------------------------------------------------*/
 .features .features-image {
+  background-image: url(assets/img/casco\ dorso_sin\ fondo.png);
   position: relative;
+  display: inline-block;
   min-height: 400px;
+}
+
+.boton {
+  background-color: #6E42F4;
+  position: absolute;
+  min-width: 20px;
+  min-height: 20px;
+  border: hidden;
+  border-radius: 50%;
 }
 
 .features .features-item h4 {
@@ -1070,8 +1083,8 @@ section,
 }
 
 .features .features-item p {
-  font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
   margin: 0;
 }
 
@@ -1203,8 +1216,8 @@ section,
 }
 
 .portfolio .portfolio-content {
-  background-color: #7DA3DF;
-  box-shadow: 0px 10px 30px rgba(78, 27, 235, 0.2);
+  background-color: #97B9ED;
+  box-shadow: 0px 10px 20px rgba(25, 44, 72, 0.6);
   border-radius: 40px;
   height: 100%;
   overflow: hidden;
@@ -1214,12 +1227,14 @@ section,
   transition: 0.3s;
   position: relative;
   z-index: 1;
+  border-radius: 45px;
+  padding: 20px
 }
 
 .portfolio .portfolio-content .portfolio-info {
-  background-color: var(--background-color);
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  padding: 25px 20px;
+  background-color: #97B9ED;
+  padding-left: 22px;
+  padding-bottom: 25px;
   position: relative;
   z-index: 2;
 }
