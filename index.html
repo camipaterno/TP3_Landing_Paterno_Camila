@@ -10,7 +10,6 @@
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -217,24 +216,24 @@
 
         <div class="row gy-4 justify-content-between">
           <div class="features-image col-lg-5 order-lg-2 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/casco dorso_sin fondo.png" class="img-fluid" alt="">
-            <button class="boton" data-target="par1" style="top: 10%; left: 48%;" onclick="toggleTooltip(this)"></button>
-            <button class="boton" data-target="par2" style="top: 55%; left: 20%;" onclick="toggleTooltip(this)"></button>
-            <button class="boton" data-target="par3" style="top: 78%; left: 48%;" onclick="toggleTooltip(this)"></button>
+            <img src="assets/img/casco_dorso.png" class="img-fluid" alt="">
+            <button id="boton1" class="toggle-btn" data-target="par1" style="top: 10%; left: 48%;"></button>
+            <button id="boton2" class="toggle-btn" data-target="par2" style="top: 55%; left: 20%;"></button>
+            <button id="boton3" class="toggle-btn" data-target="par3" style="top: 78%; left: 48%;"></button>
           </div>
 
           
           <div class="col-lg-6 d-flex flex-column justify-content-center">
-            <div id="par1" class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div id="par1" class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0 hidden-content" data-aos="fade-up" data-aos-delay="200">
               <i class="bi bi-shield-check"></i>
-              <div>
+              <div> <!-- THIS is the inner div I mean -->
                 <h4>PROTECCIÓN GARANTIZADA</h4>
                 <hr />
                 <p>Carcasa exterior de ABS, material ligero y de alta resistencia a los golpes.</p>
               </div>
             </div><!-- End Features Item-->
 
-            <div id="par2" class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div id="par2" class="features-item d-flex mt-5 ps-0 ps-lg-3 hidden-content" data-aos="fade-up" data-aos-delay="300">
               <i class="bi bi-wind"></i>
               <div>
                 <h4>FRESCURA TODO EL DÍA</h4>
@@ -243,7 +242,7 @@
               </div>
             </div><!-- End Features Item-->
 
-            <div id="par3" class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div id="par3" class="features-item d-flex mt-5 ps-0 ps-lg-3 hidden-content" data-aos="fade-up" data-aos-delay="400">
               <i class="bi bi-arrow-clockwise"></i>
               <div>
                 <h4>AJUSTE PERFECTO</h4>
@@ -254,12 +253,6 @@
           </div>
         </div>
       </div>
-      <script>
-        function toggleTooltip(boton) {
-         const boton = features-item.nextElementSibling;
-         boton.style.display = features-item.style.display === "block" ? "none" : "block";
-        }
-      </script>
 
     </section><!-- /Features Section -->
 
@@ -386,6 +379,36 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+            const targetElement = document.getElementById('par1');
+            const toggleButtons = document.querySelectorAll('.toggle-btn'); // Select all buttons with the class 'toggle-btn'
+
+            if (!targetElement) {
+              console.error('Element with ID "par1" not found!');
+              return;
+            }
+
+            if (toggleButtons.length === 0) {
+              console.error('No elements found with class "toggle-btn"!');
+              return;
+            }
+
+            console.log('Target element found:', targetElement);
+            console.log('Toggle buttons found:', toggleButtons); // This will show a list of buttons
+
+            // Add a click listener to *each* button found
+            toggleButtons.forEach(button => {
+              button.addEventListener('click', () => {
+                console.log('Button clicked:', button.id || button.className); // Log which button was clicked
+                targetElement.classList.toggle('hidden-content');
+                console.log('Target element class list after toggle:', targetElement.classList);
+              });
+            });
+          });
+        </script>
+  </script> 
+  
 </body>
 
 </html>

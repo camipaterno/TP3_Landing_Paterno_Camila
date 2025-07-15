@@ -1053,14 +1053,22 @@ section,
 /*--------------------------------------------------------------
 # Features Section
 --------------------------------------------------------------*/
+.features-item.hidden-content {
+      display: none !important;
+    }
+
+.features-item.visible-content {
+      display: flex !important; /* Or whatever display property is needed for the layout */
+      /* Add any other styles needed when visible, e.g., padding, margin */
+    }
+
 .features .features-image {
-  background-image: url(assets/img/casco\ dorso_sin\ fondo.png);
   position: relative;
   display: inline-block;
   min-height: 400px;
 }
 
-.boton {
+.toggle-btn {
   background-color: #6E42F4;
   position: absolute;
   min-width: 20px;
