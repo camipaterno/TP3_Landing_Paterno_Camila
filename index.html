@@ -381,32 +381,44 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-            const targetElement = document.getElementById('par1');
-            const toggleButtons = document.querySelectorAll('.toggle-btn'); // Select all buttons with the class 'toggle-btn'
+        const toggleButtons = document.querySelectorAll('.toggle-btn'); // Select all buttons with the class 'toggle-btn'
+
+        if (toggleButtons.length === 0) {
+          console.error('No elements found with class "toggle-btn"!');
+          return;
+        }
+
+        console.log('Toggle buttons found:', toggleButtons);
+
+        // Add a click listener to *each* button found
+        toggleButtons.forEach(button => {
+          button.addEventListener('click', (event) => { // Added 'event' parameter
+            console.log('Button clicked:', button.id || button.className);
+
+            // Get the ID of the target element from the button's data-target attribute
+            const targetId = event.target.dataset.target;
+
+            if (!targetId) {
+              console.error('Clicked button is missing the data-target attribute!');
+              return;
+            }
+
+            // Find the target element using the ID from the data attribute
+            const targetElement = document.getElementById(targetId);
 
             if (!targetElement) {
-              console.error('Element with ID "par1" not found!');
+              console.error('Target element not found with ID:', targetId);
               return;
             }
 
-            if (toggleButtons.length === 0) {
-              console.error('No elements found with class "toggle-btn"!');
-              return;
-            }
+            // Toggle the hidden-content class on the specific target element
+            targetElement.classList.toggle('hidden-content');
 
-            console.log('Target element found:', targetElement);
-            console.log('Toggle buttons found:', toggleButtons); // This will show a list of buttons
-
-            // Add a click listener to *each* button found
-            toggleButtons.forEach(button => {
-              button.addEventListener('click', () => {
-                console.log('Button clicked:', button.id || button.className); // Log which button was clicked
-                targetElement.classList.toggle('hidden-content');
-                console.log('Target element class list after toggle:', targetElement.classList);
-              });
-            });
+            console.log('Toggled class on target element:', targetId);
+            console.log('Target element class list after toggle:', targetElement.classList);
           });
-        </script>
+        });
+      });
   </script> 
   
 </body>
