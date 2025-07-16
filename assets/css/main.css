@@ -989,6 +989,8 @@ section,
 }
 
 .stats .stats-item {
+  border: 1px solid #6E42F4;
+  border-radius: 40px;
   padding: 30px;
   width: 100%;
 }
@@ -1291,9 +1293,6 @@ section,
   padding-right: 50px;
 }
 
-.portfolio .portfolio-content:hover img {
-  transform: scale(1.1);
-}
 
 @media (max-width: 640px) { /* Adjust breakpoint as needed */
 
