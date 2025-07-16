@@ -583,7 +583,7 @@ h6 {
 }
 
 .footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
   display: inline-block;
   line-height: 1;
 }
@@ -734,7 +734,7 @@ h6 {
 section,
 .section {
   color: var(--default-color);
-  padding: 60px 0;
+  padding: 84px 0;
   scroll-margin-top: 92px;
   overflow: clip;
 }
@@ -752,7 +752,7 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 42px;
   position: relative;
 }
 
@@ -809,6 +809,10 @@ section,
   font-weight: 700;
 }
 
+.hero-mobile-image {
+  display: none;
+}
+
 .hero .btn-get-started {
   background: var(--contrast-color);
   color: #6E42F4;
@@ -856,6 +860,8 @@ section,
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
+
+
 @media (max-width: 640px) {
   .hero h1 {
     font-size: 28px;
@@ -873,12 +879,12 @@ section,
     font-size: 13px;
   }
 
-  .hero img {
-    width: 100vw;
-    max-width: 640px;
-    margin: 0 auto 1.5rem auto;
-    display: block;
-    float: none;
+  .hero-desktop-image {
+    display: none;
+  }
+
+  .hero-mobile-image {
+    display: inline-block;
   }
 
 }
@@ -903,17 +909,24 @@ section,
 
 .about .content ul {
   list-style: none;
-  padding: 0;
+  padding: 0px;
 }
 
 .about .content ul li {
-  padding-bottom: 10px;
+  background-image: url("../img/violet_asterisk.svg"); /* Use your correct relative path */
+  background-repeat: no-repeat; /* Adjust position as needed, e.g., center vertically */
+  background-position: 25px left; /* Control the size of the background image */
+  background-size: 30px 30px; /* Set your desired size (width height) */
+  padding-top: 30 px;
+  padding-left: 42px; /* Add padding to make space for the icon */
+  margin-bottom: 10px; /* Add space between list items */
+  padding-bottom: 5px;
   white-space: pre-wrap;
 }
 
 .about .content ul i {
   font-size: 1.25rem;
-  margin-right: 4px;
+  margin-right: 8px;
   color: var(--accent-color);
 }
 
@@ -1058,21 +1071,20 @@ section,
     }
 
 .features-item.visible-content {
-      display: flex !important; /* Or whatever display property is needed for the layout */
-      /* Add any other styles needed when visible, e.g., padding, margin */
+      display: flex !important;
     }
 
 .features .features-image {
   position: relative;
   display: inline-block;
-  min-height: 400px;
+  max-height: 500px;
 }
 
 .toggle-btn {
   background-color: #6E42F4;
   position: absolute;
-  min-width: 20px;
-  min-height: 20px;
+  min-width: 21px;
+  min-height: 21px;
   border: hidden;
   border-radius: 50%;
 }
@@ -1095,6 +1107,16 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 0%);
   margin: 0;
 }
+
+@media (max-width: 640px) {
+  .features .features-image {
+   position: relative;
+   justify-content: center;
+   display: inline-block;
+   width: 85%;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Testimonials Section
@@ -1224,8 +1246,8 @@ section,
 }
 
 .portfolio .portfolio-content {
-  background-color: #97B9ED;
-  box-shadow: 0px 10px 20px rgba(25, 44, 72, 0.6);
+  background-color: rgb(151, 185, 237);
+  box-shadow: 0px 8px 8px 3px rgba(25, 44, 72, 0.3);
   border-radius: 40px;
   height: 100%;
   overflow: hidden;
@@ -1272,6 +1294,69 @@ section,
 .portfolio .portfolio-content:hover img {
   transform: scale(1.1);
 }
+
+@media (max-width: 640px) { /* Adjust breakpoint as needed */
+
+  .portfolio .isotope-container {
+    display: flex; /* Arrange cards horizontally */
+    overflow: visible !important;
+    overflow-x: auto !important; /* Enable horizontal scrolling */
+    overflow-y: hidden !important;
+    padding-bottom: 20px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    scroll-snap-type: x mandatory; /* Optional: Snap to card boundaries */
+    width: 100%;
+    height: auto !important;
+    -webkit-overflow-scrolling: touch; /* Improve scrolling on iOS */
+  }
+
+  .portfolio-item {
+    position: static !important;
+    flex: 0 0 100%; /* Make each card take up the full width of the container */
+    width: 100% !important; /* Ensure the width is applied */
+    scroll-snap-align: start; /* Optional: Align cards to the start for snapping */
+    /* Add any other styles for your cards on mobile */
+  }
+
+  /* You might need to adjust spacing between cards if any */
+  .portfolio-item + .portfolio-item {
+    margin-left: 0; /* Remove desktop margin if present */
+    /* Add new margin or gap if needed, e.g., gap: 20px on the container */
+  }
+
+  .carousel-pagination-dots {
+    display: flex; /* Arrange dots in a row */
+    justify-content: center; /* Center the dots horizontally */
+    margin-top: 20px; /* Add space above the dots */
+    /* Add any necessary padding */
+  }
+
+  .carousel-pagination-dots .dot {
+    display: block;
+    width: 12px; /* Size of the dot */
+    height: 12px; /* Size of the dot */
+    border-radius: 50%; /* Make it a circle */
+    background-color: #6E42F4; /* Default dot color */
+    margin: 0 5px; /* Space between dots */
+    cursor: pointer; /* Indicate it's clickable */
+    border: none; /* Remove default button border */
+    padding: 0; /* Remove default button padding */
+    outline: none; /* Remove outline on focus (be mindful of accessibility) */
+    transition: background-color 0.3s ease; /* Smooth color change */
+  }
+
+  .carousel-pagination-dots .dot.active {
+    background-color: #97B9ED; /* Color for the active (current) dot */
+  }
+
+    .row.gy-4.isotope-container.aos-init.aos-animate::-webkit-scrollbar {
+      display: none; /* Hide the scrollbar */
+    }
+
+}
+
 
 /*--------------------------------------------------------------
 # Pricing Section

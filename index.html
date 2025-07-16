@@ -69,7 +69,8 @@
     <section id="hero" class="hero section accent-background">
 
           <div style="text-align: center;">
-            <img src="assets/img/Hero_actualizado.png" width="75%" />
+            <img src="assets/img/Hero_actualizado.png" class="hero-desktop-image" width="80%" />
+            <img src="assets/img/Hero_mobile.png" class="hero-mobile-image" width="75%" />
             <br />
             <a href="#stats"><i class="bi bi-chevron-compact-down"></i></a>
           </div>
@@ -139,10 +140,10 @@
           <div class="col-lg-6 order-2 order-lg-2 content" data-aos="fade-up" data-aos-delay="200">
             <h3>COMODIDAD EN LAS PISTAS</h3>
             <br />
-            <ul>
-              <li><i class="bi bi-asterisk"></i> <span>Mantenete conectado con tu grupo mediante <b>walkie-talkie integrado</b> y <b>comunicación Bluetooth</b> inmediata.</span></li>
-              <li><i class="bi bi-asterisk"></i> <span>Detección automática de caídas, que envía <b>alerta SOS</b> con <b>ubicación GPS</b> a tus contactos.</span></li>
-              <li><i class="bi bi-asterisk"></i> <span>Cumple con las <b>certificaciones internacionales</b> EN1077 y ASTM F2040 para cascos de esquí.</span></li>
+            <ul class="content ul">
+              <li>Mantenete conectado con tu grupo mediante <b>walkie-talkie integrado</b> y <b>comunicación Bluetooth</b>.</li>
+              <li>Detección automática de caídas, que envía <b>alerta SOS</b> con <b>ubicación GPS</b> a tus contactos.</li>
+              <li>Cumple con las <b>certificaciones internacionales</b> EN1077 y ASTM F2040 para cascos de esquí.</li>
             </ul>
           </div>
 
@@ -164,9 +165,9 @@
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200"> <!--Portfolio Container -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div id=card1 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
                 <a href="assets/img/portfolio/1_altavoces.png" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/1_altavoces.png" class="img-fluid" alt=""></a>
                 <div class="portfolio-info">
@@ -176,7 +177,7 @@
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+            <div id=card2 class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
                 <a href="assets/img/portfolio/2_mic_blanco.png" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/2_mic_blanco.png" class="img-fluid" alt=""></a>
                 <div class="portfolio-info">
@@ -186,7 +187,7 @@
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+            <div id="card3" class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <div class="portfolio-content h-100">
                 <a href="assets/img/portfolio/3_bluetooth.png" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/3_antiperdida.png" class="img-fluid" alt=""></a>
                 <div class="portfolio-info">
@@ -198,6 +199,13 @@
 
           </div><!-- End Portfolio Container -->
 
+          <!-- Pagination Dots Container - Add this div -->
+          <div class="carousel-pagination-dots">
+            <button class="dot" data-target="card1"></button>
+            <button class="dot" data-target="card2"></button>
+            <button class="dot" data-target="card3"></button>
+            <!-- The small dot buttons will be added here by your JavaScript -->
+          </div>
         </div>
 
       </div>
@@ -216,20 +224,20 @@
 
         <div class="row gy-4 justify-content-between">
           <div class="features-image col-lg-5 order-lg-2 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/casco_dorso.png" class="img-fluid" alt="">
-            <button id="boton1" class="toggle-btn" data-target="par1" style="top: 10%; left: 48%;"></button>
-            <button id="boton2" class="toggle-btn" data-target="par2" style="top: 55%; left: 20%;"></button>
-            <button id="boton3" class="toggle-btn" data-target="par3" style="top: 78%; left: 48%;"></button>
+            <img src="assets/img/casco_dorso.png" class="features-image">
+            <button id="boton1" class="toggle-btn" data-target="par1" style="top: 10%; left: 44%;"></button>
+            <button id="boton2" class="toggle-btn" data-target="par2" style="top: 56%; left: 20%;"></button>
+            <button id="boton3" class="toggle-btn" data-target="par3" style="top: 78%; left: 44%;"></button>
           </div>
 
           
           <div class="col-lg-6 d-flex flex-column justify-content-center">
             <div id="par1" class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0 hidden-content" data-aos="fade-up" data-aos-delay="200">
               <i class="bi bi-shield-check"></i>
-              <div> <!-- THIS is the inner div I mean -->
+              <div> <!--Inner div-->
                 <h4>PROTECCIÓN GARANTIZADA</h4>
                 <hr />
-                <p>Carcasa exterior de ABS, material ligero y de alta resistencia a los golpes.</p>
+                <p>Carcasa exterior de ABS, material ligero y de alta resistencia.</p>
               </div>
             </div><!-- End Features Item-->
 
@@ -238,7 +246,7 @@
               <div>
                 <h4>FRESCURA TODO EL DÍA</h4>
                 <hr />
-                <p>Acolchado interior transpirable y desmontable que mantiene la higiene fresca tras jornadas intensas de nieve.</p>
+                <p>Acolchado interior transpirable y desmontable.</p>
               </div>
             </div><!-- End Features Item-->
 
@@ -247,7 +255,7 @@
               <div>
                 <h4>AJUSTE PERFECTO</h4>
                 <hr />
-                <p>El dial posterior giratorio permite regular el tamaño del casco para un calce personalizado y seguro.</p>
+                <p>El dial posterior giratorio permite regular el tamaño del casco.</p>
               </div>
             </div><!-- End Features Item-->
           </div>
@@ -270,13 +278,12 @@
           <div class="col-lg-6 order-2 order-lg-2 content" data-aos="fade-up" data-aos-delay="200">
             <h3>CONTROL DESDE TU MÓVIL</h3>
             <p>
-              <b>LIVALL Skiing</b> transforma tu experiencia en las pistas, conectando tu casco con funciones que mejoran tu seguridad y rendimiento.
+              <b>LIVALL Skiing</b> conecta tu casco con funciones que mejoran tu seguridad y rendimiento.
             </p>
-            <ul>
-              <li><i class="bi bi-asterisk"></i> <span><b>Comunicación grupal</b> con un solo clic para coordinar con tu equipo y recibir instrucciones.</span></li>
-              <li><i class="bi bi-asterisk"></i> <span><b>Registro completo de datos de esquí</b> incluyendo velocidad, altitud, pendiente y rutas para mejorar tu técnica.</span></li>
+            <ul class="content ul">
+              <li><span><b>Comunicación grupal</b> con un solo clic para coordinar con tu equipo y recibir instrucciones.</span></li>
+              <li><span><b>Registro completo de datos de esquí</b> incluyendo velocidad, altitud, pendiente y rutas.</span></li>
             </ul>
-            <a href="#app" class="read-more"><span>CONSEGUILA ACÁ</span></a>
           </div>
 
         </div>
@@ -309,29 +316,20 @@
             <a href=""><i class="bi bi-twitter-x"></i></a>
             <a href=""><i class="bi bi-facebook"></i></a>
             <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
-          <h4>LINKS</h4>
-          <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca de nosotros</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Términos de servicio</a></li>
-            <li><a href="#">Política de privacidad</a></li>
-          </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
-          <h4>PRODUCTOS</h4>
+          <h4>LIVALL</h4>
           <ul>
-            <li><a href="#">C20 - Casco Urbano</a></li>
-            <li><a href="#">EVO 21 - Casco Bicicleta</a></li>
-            <li><a href="#">MC1 - Casco Motocicleta</a></li>
-            <li><a href="#">MC1 - Casco Motocicleta</a></li>
-            <li><a href="#">RS1 - Casco Esquí</a></li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Acerca de nosotros</a></li>
+            <li><a href="#">Términos de servicio</a></li>
+            <li><a href="#">Política de privacidad</a></li>
           </ul>
         </div>
 
@@ -354,7 +352,7 @@
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Diseñado por <a href="https://bootstrapmade.com/">Camila Paternó</a>
+        Diseñado por <a href="https://bootstrapmade.com/">Camila Paternó</a> - DG2 Belluccia 2025
       </div>
     </div>
 
@@ -419,7 +417,257 @@
           });
         });
       });
-  </script> 
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  // Define your mobile breakpoint - make sure this matches your CSS media query
+  const mobileBreakpoint = '(max-width: 640px)';
+  const mediaQueryList = window.matchMedia(mobileBreakpoint);
+
+  // Get references to elements (outside the function, as they exist in the HTML always)
+  const carouselContainer = document.querySelector('.isotope-container'); // Your container class
+  const carouselItems = document.querySelectorAll('.portfolio-item'); // Your item class
+  const prevButton = document.querySelector('.carousel-prev-button'); // Your previous button class
+  const nextButton = document.querySelector('.carousel-next-button'); // Your next button class
+
+  if (!carouselContainer || carouselItems.length === 0 || !prevButton || !nextButton) {
+    console.error('Carousel elements or buttons not found!');
+    return; // Stop if essential elements aren't found
+  }
+
+  // Function to initialize the carousel logic (add event listeners)
+  function initializeCarousel() {
+    // Prevent adding listeners multiple times if already initialized
+    if (carouselContainer.dataset.carouselInitialized === 'true') {
+        return;
+    }
+
+    console.log('Initializing mobile carousel JavaScript.');
+
+    // Add event listeners ONLY when on mobile
+    nextButton.addEventListener('click', handleNextClick);
+    prevButton.addEventListener('click', handlePrevClick);
+
+    // Mark as initialized
+    carouselContainer.dataset.carouselInitialized = 'true';
+
+    // Optional: Initially hide/show buttons based on start/end if needed
+    // You might need more sophisticated logic for this based on scroll position
+    // For simplicity, we'll assume buttons are always visible in this basic example.
+  }
+
+  // Function to de-initialize the carousel logic (remove event listeners)
+  function deinitializeCarousel() {
+     if (carouselContainer.dataset.carouselInitialized !== 'true') {
+        return; // Not initialized, nothing to do
+    }
+     console.log('De-initializing mobile carousel JavaScript.');
+
+     // Remove event listeners
+     nextButton.removeEventListener('click', handleNextClick);
+     prevButton.removeEventListener('click', handlePrevClick);
+
+     // Remove initialized flag
+     delete carouselContainer.dataset.carouselInitialized;
+
+     // Optional: Reset any styles or state changed by JS if necessary
+     // e.g., if you were hiding items with JS instead of CSS overflow
+  }
+
+
+  // --- Carousel Core Logic (Functions for Event Listeners) ---
+  // Moved into named functions so we can add/remove listeners
+
+  let currentItemIndex = 0; // Track the current item index
+
+  function scrollToItem(index) {
+    if (index >= 0 && index < carouselItems.length) {
+      carouselItems[index].scrollIntoView({
+        behavior: 'smooth',
+        inline: 'start'
+      });
+       currentItemIndex = index; // Update index after scrolling
+    }
+     // You could add logic here to disable/enable buttons based on index
+  }
+
+  function handleNextClick() {
+    currentItemIndex++;
+    if (currentItemIndex >= carouselItems.length) {
+      currentItemIndex = 0; // Loop back
+    }
+    scrollToItem(currentItemIndex);
+  }
+
+  function handlePrevClick() {
+    currentItemIndex--;
+    if (currentItemIndex < 0) {
+      currentItemIndex = carouselItems.length - 1; // Loop back
+    }
+    scrollToItem(currentItemIndex);
+  }
+
+  // --- Media Query Handling ---
+
+  // Function to handle changes in the media query match
+  function handleMediaQueryChange(event) {
+    if (event.matches) {
+      // Media query matches (it's mobile)
+      initializeCarousel();
+    } else {
+      // Media query does not match (it's desktop)
+      deinitializeCarousel();
+    }
+  }
+
+  // Add a listener for changes in the media query
+  mediaQueryList.addEventListener('change', handleMediaQueryChange);
+
+  // Initial check when the page loads
+  handleMediaQueryChange(mediaQueryList);
+
+});
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const mobileBreakpoint = '(max-width: 640px)';
+  const mediaQueryList = window.matchMedia(mobileBreakpoint);
+
+  const carouselContainer = document.querySelector('.isotope-container'); // Your container class
+  const carouselItems = document.querySelectorAll('.portfolio-item'); // Your item class
+  const prevButton = document.querySelector('.carousel-prev-button');
+  const nextButton = document.querySelector('.carousel-next-button');
+  const dotsContainer = document.querySelector('.carousel-pagination-dots'); // New: Get the dots container
+
+  if (!carouselContainer || carouselItems.length === 0 || !prevButton || !nextButton || !dotsContainer) {
+    console.error('Carousel elements, buttons, or dots container not found!');
+    return;
+  }
+
+  // --- Pagination Dots Logic ---
+
+  // Function to create dots based on the number of items
+  function createPaginationDots() {
+    dotsContainer.innerHTML = ''; // Clear existing dots
+    carouselItems.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.classList.add('dot');
+      dot.dataset.index = index; // Store the index on the dot element
+      dotsContainer.appendChild(dot);
+
+      // Add click listener to each dot
+      dot.addEventListener('click', () => {
+        scrollToItem(index); // Scroll to the item corresponding to the dot index
+      });
+    });
+  }
+
+  // Function to update the active dot class
+  function updateActiveDot(activeIndex) {
+    dotsContainer.querySelectorAll('.dot').forEach((dot, index) => {
+      if (index === activeIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  // --- Carousel Core Logic (Modified) ---
+
+  let currentItemIndex = 0;
+
+  function scrollToItem(index) {
+    if (index >= 0 && index < carouselItems.length) {
+      carouselItems[index].scrollIntoView({
+        behavior: 'smooth',
+        inline: 'start'
+      });
+      currentItemIndex = index; // Update index after scrolling
+      updateActiveDot(currentItemIndex); // New: Update active dot
+    }
+  }
+
+  function handleNextClick() {
+    currentItemIndex++;
+    if (currentItemIndex >= carouselItems.length) {
+      currentItemIndex = 0; // Loop back
+    }
+    scrollToItem(currentItemIndex);
+  }
+
+  function handlePrevClick() {
+    currentItemIndex--;
+    if (currentItemIndex < 0) {
+      currentItemIndex = carouselItems.length - 1; // Loop back
+    }
+    scrollToItem(currentItemIndex);
+  }
+
+   // Optional: Add logic to update currentItemIndex and active dot
+   // when the user *manually* scrolls the carousel container.
+   // This is more complex and involves observing scroll events and calculating
+   // which item is currently in view. For this basic example, we'll focus
+   // on updating the dot on button or dot clicks.
+   /*
+   carouselContainer.addEventListener('scroll', () => {
+      // Calculate which item is most visible and update currentItemIndex
+      // Then call updateActiveDot(currentItemIndex);
+   });
+   */
+
+
+  // --- Media Query Handling (Modified) ---
+
+  function initializeCarousel() {
+    if (carouselContainer.dataset.carouselInitialized === 'true') {
+        return;
+    }
+    console.log('Initializing mobile carousel JavaScript.');
+
+    // Add button listeners
+    nextButton.addEventListener('click', handleNextClick);
+    prevButton.addEventListener('click', handlePrevClick);
+
+    // New: Create and initialize dots
+    createPaginationDots();
+    updateActiveDot(currentItemIndex); // Set the first dot as active initially
+
+    carouselContainer.dataset.carouselInitialized = 'true';
+  }
+
+  function deinitializeCarousel() {
+     if (carouselContainer.dataset.carouselInitialized !== 'true') {
+        return; // Not initialized, nothing to do
+    }
+     console.log('De-initializing mobile carousel JavaScript.');
+
+     // Remove button listeners
+     nextButton.removeEventListener('click', handleNextClick);
+     prevButton.removeEventListener('click', handlePrevClick);
+
+     // New: Clear dots and remove their listeners
+     dotsContainer.innerHTML = ''; // This also removes the click listeners attached to the dots
+
+     delete carouselContainer.dataset.carouselInitialized;
+  }
+
+  function handleMediaQueryChange(event) {
+    if (event.matches) {
+      initializeCarousel();
+    } else {
+      deinitializeCarousel();
+    }
+  }
+
+  mediaQueryList.addEventListener('change', handleMediaQueryChange);
+
+  // Initial check when the page loads
+  handleMediaQueryChange(mediaQueryList);
+});
+  </script>
   
 </body>
 
