@@ -537,9 +537,9 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 0%);
+  border: 1px solid color-mix(in srgb, var(--contrast-color), transparent 0%);
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 0%);
+  color: color-mix(in srgb, var(--contrast-color), transparent 0%);
   margin-right: 10px;
   transition: 0.3s;
 }
@@ -1356,6 +1356,11 @@ section,
 
 }
 
+@media (min-width: 641px) {
+  .carousel-pagination-dots {
+    display: none;
+  }
+}
 
 /*--------------------------------------------------------------
 # Pricing Section
